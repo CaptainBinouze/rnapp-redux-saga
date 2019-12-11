@@ -1,15 +1,25 @@
 // @flow
-import { createStackNavigator } from 'react-navigation';
-import { Screen1, Screen2 } from './../screens/Screens.sample';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import Home from './../screens/Home';
+import ContactProfile from './../screens/ContactProfile';
 
 const RootNavigator = createStackNavigator({
   Home: {
-    screen: Screen1,
+    screen: Home,
     navigationOptions: ({ navigation }) => ({
-      title: 'Screen 1',
-    }),
+      title: 'Contacts',
+    })
+  },
+  ContactProfile: {
+    screen: ContactProfile,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Profile',
+    })
   },
   /* Add more screen here */
 });
 
-export default RootNavigator;
+const Navigator = createAppContainer(RootNavigator);
+
+export default Navigator;

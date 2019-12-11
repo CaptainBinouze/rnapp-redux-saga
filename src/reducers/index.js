@@ -1,14 +1,9 @@
-// @flow
 import { combineReducers } from 'redux';
-import reducerSample from './reducer.sample';
-import type { StateType as ReducerSampleStateType } from './reducer.sample';
 
-type AppState = {
-  reducerSample: ReducerSampleStateType,
-};
+import contacts from './contacts';
 
-const state: AppState = combineReducers({
-  reducerSample,
+const rootReducer = combineReducers({
+  contacts
 });
 
-export default state;
+export default rootReducer;
